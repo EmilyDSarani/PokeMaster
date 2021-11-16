@@ -18,15 +18,14 @@ async function run() {
                     hash VARCHAR(512) NOT NULL
                 );   
                 CREATE TABLE elements (
-                  element_id SERIAL PRIMARY KEY NOT NULL,
-                  element_name VARCHAR(512) NOT NULL
+                  id SERIAL PRIMARY KEY NOT NULL,
+                  weapon_name VARCHAR(512) NOT NULL
                 );
                 CREATE TABLE avatar (
                   id SERIAL PRIMARY KEY NOT NULL,
                   name VARCHAR(512) NOT NULL,
-                  element_id INTEGER NOT NULL REFERENCES element(element_id),
-                  img VARCHAR(512) NOT NULL,
-                  title VARCHAR(512) NOT NULL,
+                  race VARCHAR(512) NOT NULL,
+                  hp VARCHAR(512) NOT NULL,
                   owner_id INTEGER NOT NULL REFERENCES users(id)
             );
         `);

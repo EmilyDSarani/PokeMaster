@@ -1,11 +1,10 @@
 const bcrypt = require('bcryptjs');
 const client = require('../lib/client');
 // import our seed data:
-const avatar = require('./avatar.js');
+const character = require('./character.js');
 const usersData = require('./users.js');
-const elementData = require('./elements.js');
-
 const { getEmoji } = require('../lib/emoji.js');
+const weapons = require('./weapons.js');
 run();
 
 async function run() {
@@ -28,23 +27,23 @@ async function run() {
     const user = users[0].rows[0];
 
     await Promise.all(
-      elementData.map(element => {
+      weapons.map(weapon => {
         return client.query(`
-                    INSERT INTO elements (element_id, element_name)
-                    VALUES ($1, $2)
+                    INSERT INTO weapons (weapon_name)
+                    VALUES ($1)
                     RETURNING *;
                 `,
-        [element.element_id, element.element_name]);
+        [weapon.weapon]);
       })
     );
 
     await Promise.all(
-      avatar.map(avatar => {
+      character.map(character => {
         return client.query(`
-                    INSERT INTO avatar (name, element_id, img, title, owner_id)
-                    VALUES ($1, $2, $3, $4, $5);
+                    INSERT INTO character (name, race, hp, owner_id)
+                    VALUES ($1, $2, $3, $4);
                 `,
-        [avatar.name, avatar.element_id, avatar.img, avatar.title, user.id]);
+        [character.name, character.race, character.hp, user.id]);
       })
     );
     
