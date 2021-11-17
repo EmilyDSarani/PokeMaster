@@ -17,11 +17,11 @@ async function run() {
                     email VARCHAR(256) NOT NULL,
                     hash VARCHAR(512) NOT NULL
                 );   
-                CREATE TABLE elements (
+                CREATE TABLE weapons (
                   id SERIAL PRIMARY KEY NOT NULL,
                   weapon_name VARCHAR(512) NOT NULL
                 );
-                CREATE TABLE avatar (
+                CREATE TABLE character (
                   id SERIAL PRIMARY KEY NOT NULL,
                   name VARCHAR(512) NOT NULL,
                   race VARCHAR(512) NOT NULL,

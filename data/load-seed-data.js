@@ -33,7 +33,7 @@ async function run() {
                     VALUES ($1)
                     RETURNING *;
                 `,
-        [weapon.weapon]);
+        [weapon.weapon_name]);
       })
     );
 
