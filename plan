@@ -13,3 +13,19 @@ Back-End, I will create the list of characters and a list of values for the weap
 https://picrew.me/image_maker/708151
 
 
+SwordAxeLance react-
+Hit space and go to the next.
+ https://kaboomjs.com/
+
+If HP is lower than
+
+Heroku App
+Why do the backend:
+1. create users
+2. GET Character Name and Weapon
+3. GET character hair skin eye (look into color input. in-line color) (input-type color) https://www.w3schools.com/tags/att_input_type_color.asp
+4. POST Character
+5. POST Weapon
+6. DELETE Character
+
+
